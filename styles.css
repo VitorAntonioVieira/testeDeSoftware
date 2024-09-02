@@ -33,7 +33,7 @@ section {
 .card {
     display: flex;
     width: 90%;
-    height: 200px;
+    height: 400px;
     background-color: white;
     border: 5px solid #222;
     border-radius: 8px;
@@ -55,7 +55,7 @@ section {
 
 .personal-img {
     width: 70%;
-    height: 62%;
+    height: auto;
     object-fit: cover;
     border-radius: 50%;
     border-color: #222;
@@ -84,6 +84,31 @@ section {
     color: #888;
     text-align: left;
 }
+
+.login-form {
+    /* Herda as propriedades dos cards */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    /* Estilo específico para o formulário */
+    width: 40%; /* Ajuste a largura conforme necessário */
+    margin: 0 auto; /* Centraliza o formulário */
+  }
+  
+  .form-group {
+    margin-bottom: 10px;
+  }
+  
+  .btn {
+    /* Estilo para o botão */
+    background-color: #2e3487;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
 
 @media (max-width: 768px) {
     .card {

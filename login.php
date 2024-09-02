@@ -1,21 +1,25 @@
-<?php 
-    require './config.php';
+<?php
 
-    if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
-        $username = $_POST['username'];
-        $password = $_POST['password'];
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $submittedUsername = $_POST['username'];
+    $submittedPassword = $_POST['password'];
 
-        if ( $username != '' && $password != '') {
-            if ( $username == $config['db']['_username'] && $password == $config['db']['password'] ) {
-                session_start();
-                $_SESSION['username'] = $username;
-                echo 'Logado';
-            } else {
-                echo 'Informações incorretas';
-            }
-        } else {
-            echo 'Preencha os campos';
-        }
+    $username = 'wesley';
+    $password = '2024';
+
+    if (
+        $submittedUsername == $username
+        && $submittedPassword == $password
+    ) {
+        session_start();
+        $_SESSION['username'] = $submittedUsername;
+        header('Location: index.html');
+        echo 'Logado com sucesso!';
     } else {
-        echo 'Error: Invalid insection';
-    };
+        echo 'Informações incorretas';
+    }
+} else {
+    echo 'Erro: Requisição inválida';
+}
+
+?>
